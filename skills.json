@@ -1,0 +1,10 @@
+{
+  "skills": [
+    {
+      "source": "anthropics/skills",
+      "skills": [
+        "frontend-design"
+      ]
+    }
+  ]
+}
