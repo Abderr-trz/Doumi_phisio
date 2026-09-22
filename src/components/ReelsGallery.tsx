@@ -7,6 +7,7 @@ import { Play, Volume2, VolumeX, X } from "lucide-react";
 interface ReelItem {
   id: string;
   videoUrl: string;
+  posterUrl: string;
   title: string;
   category: string;
   description: string;
@@ -17,6 +18,7 @@ const reelsData: ReelItem[] = [
   {
     id: "tecartherapie",
     videoUrl: "/videos/reel-1.mp4",
+    posterUrl: "/images/reels/reel-1.webp",
     title: "Tecarthérapie & Récupération",
     category: "Technologie Pointe",
     description: "Soin par électrothérapie haute fréquence pour accélérer la régénération musculaire et articulaire.",
@@ -25,6 +27,7 @@ const reelsData: ReelItem[] = [
   {
     id: "scoliose",
     videoUrl: "/videos/reel-2.mp4",
+    posterUrl: "/images/reels/reel-2.webp",
     title: "Évaluation & Suivi Scoliose",
     category: "Posture & Dos",
     description: "Chaque scoliose est unique. L'évaluation clinique personnalisée permet d'ajuster précisément les exercices.",
@@ -33,6 +36,7 @@ const reelsData: ReelItem[] = [
   {
     id: "lca-comeback",
     videoUrl: "/videos/reel-3.mp4",
+    posterUrl: "/images/reels/reel-3.webp",
     title: "Réhabilitation LCA (Genou)",
     category: "Kiné du Sport",
     description: "De la blessure au retour sur le terrain ⚽ : protocole complet de rééducation après rupture du Ligament Croisé Antérieur.",
@@ -41,6 +45,7 @@ const reelsData: ReelItem[] = [
   {
     id: "neuromusculaire",
     videoUrl: "/videos/reel-4.mp4",
+    posterUrl: "/images/reels/reel-4.webp",
     title: "Rééducation Neuromusculaire",
     category: "Récupération Optimisée",
     description: "Utilisation combinée de la Tecarthérapie et d'exercices guidés pour optimiser la mobilité et la force.",
@@ -156,6 +161,7 @@ export default function ReelsGallery() {
               {/* Card Video Background */}
               <video
                 src={reel.videoUrl}
+                poster={reel.posterUrl}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 muted
                 playsInline
@@ -233,6 +239,7 @@ export default function ReelsGallery() {
               <video
                 ref={modalVideoRef}
                 src={reelsData[activeReelIndex].videoUrl}
+                poster={reelsData[activeReelIndex].posterUrl}
                 className="h-full w-full object-contain"
                 autoPlay
                 playsInline
