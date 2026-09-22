@@ -69,17 +69,17 @@ export default function Home() {
   return (
     <div className="lux-brand-background min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-          <a href="#" className="flex items-center gap-3">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-5 sm:py-4">
+          <a href="#" className="flex min-w-0 items-center gap-2.5 sm:gap-3">
             <Image
               src="/logo.png"
               alt="Doumi Physio"
               width={42}
               height={42}
-              className="rounded-md"
+              className="size-9 shrink-0 rounded-md sm:size-[42px]"
               priority
             />
-            <span className="text-lg font-semibold">Doumi Physio</span>
+            <span className="truncate text-base font-semibold sm:text-lg">Doumi Physio</span>
           </a>
 
           <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
@@ -105,7 +105,7 @@ export default function Home() {
 
           <a
             href="tel:+212649786068"
-            className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+            className="shrink-0 rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 sm:px-4"
           >
             Appeler
           </a>
@@ -114,15 +114,15 @@ export default function Home() {
 
       <main>
         <section className="border-b border-border">
-          <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1.05fr_0.95fr] md:items-center md:py-20">
+          <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-5 sm:py-14 md:grid-cols-[1.05fr_0.95fr] md:items-center md:gap-10 md:py-20">
             <div>
               <p className="mb-4 text-sm font-medium text-primary">
                 Centre de kinesitherapie a Agadir
               </p>
-              <h1 className="max-w-3xl text-4xl font-semibold leading-tight md:text-5xl">
+              <h1 className="max-w-3xl text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
                 Des soins simples, clairs et adaptes a votre douleur.
               </h1>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">
+              <p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground sm:mt-5 sm:text-lg sm:leading-8">
                 Doumi Physio vous accompagne pour recuperer votre mobilite,
                 soulager les douleurs et reprendre vos activites avec confiance.
               </p>
@@ -142,8 +142,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex items-center justify-center rounded-2xl border border-border bg-card p-3 shadow-lg transition-all duration-300 hover:shadow-xl sm:p-5">
-              <div className="relative aspect-[3/4] w-full max-w-[420px] overflow-hidden rounded-xl bg-muted/30">
+            <div className="touch-static flex items-center justify-center rounded-2xl border border-border bg-card p-3 shadow-lg transition-all duration-300 hover:shadow-xl sm:p-5">
+              <div className="relative aspect-[4/3] w-full max-w-[420px] overflow-hidden rounded-xl bg-muted/30 md:aspect-[3/4]">
                 <Image
                   src="/images/office.jpg"
                   alt="Cabinet Doumi Physio"
@@ -320,7 +320,7 @@ export default function Home() {
                 <iframe
                   title="Localisation Cabinet Doumi Physio"
                   src={googleMapsEmbedUrl}
-                  className="h-[420px] w-full border-0"
+                  className="h-[300px] w-full border-0 sm:h-[420px]"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
