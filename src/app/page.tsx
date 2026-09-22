@@ -8,6 +8,7 @@ import {
   Navigation,
   Phone,
 } from "lucide-react";
+import ReelsGallery from "@/components/ReelsGallery";
 
 const services = [
   "Reeducation apres blessure ou operation",
@@ -41,18 +42,6 @@ const resultImages = [
   },
 ];
 
-const educationImages = {
-  avc: [
-    "/images/info/info-1.png",
-    "/images/info/info-2.png",
-    "/images/info/info-3.png",
-  ],
-  info4: "/images/info/info-4.png",
-  info5: "/images/info/info-5.png",
-  info6: "/images/info/info-6.png",
-  info7: "/images/info/info-7.png",
-};
-
 const hours = [
   ["Samedi", "09:00 - 12:30"],
   ["Dimanche", "Ferme"],
@@ -78,7 +67,7 @@ const googleMapsEmbedUrl = `https://maps.google.com/maps?q=${mapsQuery}&z=16&out
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="lux-brand-background min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
           <a href="#" className="flex items-center gap-3">
@@ -97,11 +86,11 @@ export default function Home() {
             <a className="hover:text-foreground" href="#services">
               Services
             </a>
+            <a className="hover:text-foreground" href="#reels">
+              Démonstrations
+            </a>
             <a className="hover:text-foreground" href="#resultats">
               Resultats
-            </a>
-            <a className="hover:text-foreground" href="#conseils">
-              Conseils
             </a>
             <a className="hover:text-foreground" href="#infos">
               Infos
@@ -153,15 +142,17 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex justify-center rounded-lg border border-border bg-card p-3 sm:p-4">
-              <Image
-                src="/images/office.png"
-                alt="Cabinet Doumi Physio"
-                width={428}
-                height={630}
-                className="h-auto max-h-[560px] w-full max-w-[380px] rounded-md object-contain"
-                priority
-              />
+            <div className="flex items-center justify-center rounded-2xl border border-border bg-card p-3 shadow-lg transition-all duration-300 hover:shadow-xl sm:p-5">
+              <div className="relative aspect-[3/4] w-full max-w-[420px] overflow-hidden rounded-xl bg-muted/30">
+                <Image
+                  src="/images/office.jpg"
+                  alt="Cabinet Doumi Physio"
+                  fill
+                  sizes="(min-width: 768px) 420px, 100vw"
+                  className="object-cover object-center shadow-inner"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -190,7 +181,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="resultats" className="border-b border-border bg-white py-14 md:py-18">
+        <ReelsGallery />
+
+        <section id="resultats" className="border-b border-border bg-card/80 py-14 backdrop-blur-sm md:py-18">
           <div className="mx-auto max-w-6xl px-5">
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div className="max-w-2xl">
@@ -227,108 +220,6 @@ export default function Home() {
                     <h3 className="font-semibold">{item.title}</h3>
                     <p className="mt-2 text-sm leading-6 text-muted-foreground">
                       {item.desc}
-                    </p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="conseils" className="border-b border-border py-14 md:py-18">
-          <div className="mx-auto max-w-6xl px-5">
-            <div className="max-w-3xl">
-              <h2 className="text-3xl font-semibold">Informations sante et prevention</h2>
-              <p className="mt-3 leading-7 text-muted-foreground">
-                Des informations simples a lire pour mieux comprendre certains
-                troubles du corps, reconnaitre les signes importants et savoir
-                quand demander un avis professionnel.
-              </p>
-            </div>
-
-            <article className="mt-8 rounded-lg border border-border bg-card p-5 md:p-6">
-              <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-                <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-                  {educationImages.avc.map((src, index) => (
-                    <div
-                      key={src}
-                      className="relative aspect-[4/3] overflow-hidden rounded-md bg-muted"
-                    >
-                      <Image
-                        src={src}
-                        alt={"Information AVC " + (index + 1)}
-                        fill
-                        sizes="(min-width: 1024px) 38vw, (min-width: 640px) 33vw, 100vw"
-                        className="object-cover object-top"
-                      />
-                    </div>
-                  ))}
-                </div>
-
-                <div>
-                  <h3 className="text-2xl font-semibold">L AVC, qu est-ce que c est ?</h3>
-                  <p className="mt-4 leading-7 text-muted-foreground">
-                    Un AVC, ou Accident Vasculaire Cerebral, arrive quand le sang
-                    n arrive plus correctement au cerveau. Sans oxygene,
-                    certaines parties du cerveau s abiment rapidement.
-                  </p>
-
-                  <div className="mt-5 space-y-5 text-sm leading-7 text-muted-foreground">
-                    <div>
-                      <p className="font-semibold text-foreground">Il existe 2 grands types :</p>
-                      <ul className="mt-2 list-disc space-y-1 pl-5">
-                        <li>AVC ischemique : une artere se bouche a cause d un caillot.</li>
-                        <li>AVC hemorragique : un vaisseau du cerveau se rompt et provoque un saignement.</li>
-                      </ul>
-                    </div>
-
-                    <div>
-                      <p className="font-semibold text-foreground">Les signes qui doivent alerter :</p>
-                      <ul className="mt-2 list-disc space-y-1 pl-5">
-                        <li>Faiblesse ou paralysie d un cote du corps.</li>
-                        <li>Difficulte a parler ou a comprendre.</li>
-                        <li>Perte soudaine de la vue.</li>
-                        <li>Mal de tete tres intense et brutal.</li>
-                      </ul>
-                    </div>
-
-                    <p>
-                      Apres l urgence, la reeducation comme la kinesitherapie,
-                      l orthophonie ou l ergotherapie joue un role essentiel pour
-                      aider la personne a retrouver son autonomie.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <div className="mt-6 grid gap-5 lg:grid-cols-2">
-              {[
-                educationImages.info4,
-                educationImages.info5,
-                educationImages.info6,
-                educationImages.info7,
-              ].map((src, index) => (
-                <article
-                  key={src}
-                  className="grid gap-4 rounded-lg border border-border bg-card p-4 sm:grid-cols-[180px_1fr]"
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-muted sm:aspect-auto sm:min-h-[190px]">
-                    <Image
-                      src={src}
-                      alt={"Information sante " + (index + 4)}
-                      fill
-                      sizes="(min-width: 1024px) 180px, 100vw"
-                      className="object-cover object-top"
-                    />
-                  </div>
-                  <div className="py-1">
-                    <h3 className="font-semibold">Information sante #{index + 4}</h3>
-                    <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                      Ce visuel presente une information de prevention et de
-                      sensibilisation autour du corps, de la douleur ou de la
-                      reeducation. Le contenu aide le patient a mieux comprendre
-                      son etat et a demander un avis adapte au cabinet.
                     </p>
                   </div>
                 </article>
@@ -375,7 +266,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="localisation" className="border-b border-border bg-white py-14 md:py-18">
+        <section id="localisation" className="border-b border-border bg-card/80 py-14 backdrop-blur-sm md:py-18">
           <div className="mx-auto max-w-6xl px-5">
             <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
               <div>

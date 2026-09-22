@@ -88,3 +88,65 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+.lux-brand-background {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.lux-brand-background::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image: url("/logo.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: min(680px, 70vw) auto;
+  opacity: 0.16;
+  filter: saturate(1.05) contrast(1.08);
+}
+
+.lux-brand-background::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(15, 118, 110, 0.12), transparent 32%),
+    radial-gradient(circle at 88% 18%, rgba(148, 163, 184, 0.16), transparent 30%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(248, 250, 252, 0.5));
+}
+
+.lux-brand-background section {
+  position: relative;
+}
+
+.lux-brand-background section:not(:first-child) > div {
+  position: relative;
+}
+
+.lux-brand-background section:not(:first-child) > div::before {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  z-index: -1;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.54);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.04);
+}
+
+@media (max-width: 768px) {
+  .lux-brand-background::before {
+    background-position: center center;
+    background-size: min(340px, 82vw) auto;
+    opacity: 0.11;
+  }
+
+  .lux-brand-background section:not(:first-child) > div::before {
+    inset: -10px;
+  }
+}
