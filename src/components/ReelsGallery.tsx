@@ -193,7 +193,7 @@ export default function ReelsGallery() {
 
               {/* Content Overlay */}
               <div className="absolute bottom-0 inset-x-0 p-4 z-10 flex flex-col justify-end text-white">
-                <h3 className="text-base font-semibold mb-1 group-hover:text-emerald-300 transition-colors">
+                <h3 className="mb-1 text-base font-semibold transition-colors group-hover:text-white">
                   {reel.title}
                 </h3>
                 <p className="text-xs text-slate-200 line-clamp-2 mb-2 leading-relaxed">
@@ -201,7 +201,7 @@ export default function ReelsGallery() {
                 </p>
                 <div className="flex flex-wrap gap-1">
                   {reel.hashtags.slice(0, 2).map((tag, tIdx) => (
-                    <span key={tIdx} className="text-[10px] text-emerald-300 font-medium">
+                    <span key={tIdx} className="text-[10px] font-medium text-white/80">
                       {tag}
                     </span>
                   ))}
@@ -269,7 +269,7 @@ export default function ReelsGallery() {
                   className="grid size-11 place-items-center rounded-full bg-black/65 text-white backdrop-blur-md transition-colors hover:bg-black/85"
                   aria-label={isMuted ? "Activer le son" : "Couper le son"}
                 >
-                  {isMuted ? <VolumeX className="w-5 h-5 text-red-400" /> : <Volume2 className="w-5 h-5 text-emerald-400" />}
+                  {isMuted ? <VolumeX className="h-5 w-5 text-white/70" /> : <Volume2 className="h-5 w-5 text-white" />}
                 </button>
               </div>
             </div>
@@ -277,7 +277,7 @@ export default function ReelsGallery() {
             {/* Video information */}
             <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-black via-black/75 to-transparent px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-20 text-white sm:px-8 sm:pt-28">
               <div className="mx-auto max-w-xl">
-              <span className="text-xs font-semibold text-emerald-300">
+              <span className="text-xs font-semibold text-white/80">
                 {reelsData[activeReelIndex].category}
               </span>
               <h4 className="mt-1 text-lg font-semibold text-white sm:text-xl">

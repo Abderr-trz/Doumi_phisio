@@ -31,24 +31,24 @@
 
 :root {
   --radius: 0.5rem;
-  --background: #f8fafc;
-  --foreground: #111827;
+  --background: #f7f7f5;
+  --foreground: #2f3133;
   --card: #ffffff;
-  --card-foreground: #111827;
+  --card-foreground: #2f3133;
   --popover: #ffffff;
-  --popover-foreground: #111827;
-  --primary: #0f766e;
+  --popover-foreground: #2f3133;
+  --primary: #3f4244;
   --primary-foreground: #ffffff;
-  --secondary: #eef6f5;
-  --secondary-foreground: #134e4a;
-  --muted: #f1f5f9;
-  --muted-foreground: #64748b;
-  --accent: #dbeafe;
-  --accent-foreground: #1e3a8a;
+  --secondary: #ecece9;
+  --secondary-foreground: #3f4244;
+  --muted: #efefec;
+  --muted-foreground: #696d70;
+  --accent: #e1e2df;
+  --accent-foreground: #2f3133;
   --destructive: #dc2626;
-  --border: #dbe3ea;
-  --input: #dbe3ea;
-  --ring: #0f766e;
+  --border: #d7d9d6;
+  --input: #d7d9d6;
+  --ring: #55595c;
 }
 
 @layer base {
@@ -119,9 +119,9 @@
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(circle at 12% 12%, rgba(15, 118, 110, 0.12), transparent 32%),
-    radial-gradient(circle at 88% 18%, rgba(148, 163, 184, 0.16), transparent 30%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(248, 250, 252, 0.5));
+    radial-gradient(circle at 12% 12%, rgba(63, 66, 68, 0.1), transparent 32%),
+    radial-gradient(circle at 88% 18%, rgba(172, 175, 173, 0.18), transparent 30%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(247, 247, 245, 0.58));
 }
 
 .lux-brand-background section {
