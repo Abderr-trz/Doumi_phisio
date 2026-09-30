@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   description:
     "Centre de kinesitherapie a Douars pour la reeducation, les douleurs articulaires, le sport et le suivi patient.",
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: "/logo_doumi.png",
+    apple: "/logo_doumi.png",
   },
   openGraph: {
     title: "Doumi Physio",
